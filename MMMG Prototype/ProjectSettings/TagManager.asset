@@ -11,6 +11,9 @@ TagManager:
   - Portal_1O
   - Portal_2I
   - Portal_2O
+  - LaserGun
+  - Box
+  - HiddenPathTrigger
   layers:
   - Default
   - TransparentFX

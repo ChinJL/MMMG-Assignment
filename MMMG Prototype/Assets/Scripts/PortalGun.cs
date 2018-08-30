@@ -85,15 +85,20 @@ public class PortalGun : MonoBehaviour {
 	}
 
 	private void Shoot(Vector3 location){
-		if (Input.GetKeyDown (shootKey) && isReached) {
+		//if (Input.GetKeyDown (shootKey) && isReached) {
+		if (Input.GetKey(KeyCode.Mouse0) && isReached)
+		{	
 			isReached = false;
 			Vector3 aimedPos = location;
 			aimedPos = aimedPos + (Vector3.down * offset_y);
-			if (turn == 2) {
+			if (turn == 2)
+			{
 				ResetPortal ();
-			} else {
+			}
+			else
+			{
 				portalObj [turn].SetActive (true);
-				StartCoroutine(PlacePortal (portalObj [turn], aimedPos));
+				StartCoroutine (PlacePortal (portalObj [turn], aimedPos));
 				turn++;
 			}
 		}
@@ -109,6 +114,20 @@ public class PortalGun : MonoBehaviour {
 		}
 		isReached = true;
 		turn = 0;
+
+		GameObject[] laserGun = GameObject.FindGameObjectsWithTag ("LaserGun");
+		foreach (GameObject gun in laserGun)
+		{
+			LaserGunToReflector portal = gun.GetComponent<LaserGunToReflector> ();
+			portal.hit_Portal_1 = false;
+			portal.hit_Portal_2 = false;
+		}
+		GameObject[] reflector = GameObject.FindGameObjectsWithTag ("Reflector");
+		foreach (GameObject reflect in reflector) {
+			LaserReflectorToSensor portalHit = reflect.GetComponent<LaserReflectorToSensor> ();
+			portalHit.hittedPortal_1 = false;
+			portalHit.hittedPortal_2 = false;
+		}
 	}
 
 	private IEnumerator PlacePortal(GameObject bullet, Vector3 targetLocation){

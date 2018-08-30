@@ -31,6 +31,9 @@ public class SwitchRoom : MonoBehaviour {
 	private Vector3 initialPlayerPos;
 	[SerializeField] private GameObject[] portalObj = null;
 
+	// False = Reflector 1 // True = Reflector 2
+	public bool Reflector_1_or_Reflector_2 = false;
+
 	private void Update(){
 		if (room1 == _room1.transform && room2 == _room2.transform && room3 == _room3.transform && room4 == _room4.transform && room5 == _room5.transform) {
 			isArranged = true;
@@ -54,6 +57,15 @@ public class SwitchRoom : MonoBehaviour {
 			initialPos2 = room2.localPosition;
 			initialPos3 = room3.localPosition;
 			initialPos4 = room4.localPosition;
+
+			GameObject[] ReflectorToSensor = GameObject.FindGameObjectsWithTag ("Reflector");
+			foreach (GameObject RtS in ReflectorToSensor) {
+				Reflect reflect = RtS.GetComponent<Reflect> ();
+				reflect.isReflect_ = false;
+			}
+
+			Reflector_1_or_Reflector_2 = !Reflector_1_or_Reflector_2;
+
 			StartCoroutine(DelaySwitchRoom_1 ());
 		} else {
 			return;
@@ -87,6 +99,15 @@ public class SwitchRoom : MonoBehaviour {
 			initialPos2 = room3.localPosition;
 			initialPos3 = room4.localPosition;
 			initialPos4 = room5.localPosition;
+
+			GameObject[] goList = GameObject.FindGameObjectsWithTag ("Reflector");
+			foreach (GameObject go in goList) {
+				Reflect reflect = go.GetComponent<Reflect> ();
+				reflect.isReflect_ = false;
+			}
+
+			Reflector_1_or_Reflector_2 = !Reflector_1_or_Reflector_2;
+
 			StartCoroutine(DelaySwitchRoom_2 ());
 		} else {
 			return;

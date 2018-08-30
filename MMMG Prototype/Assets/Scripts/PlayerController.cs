@@ -16,23 +16,29 @@ public class PlayerController : MonoBehaviour {
 
 	private string s_horizontal = "Horizontal";
 
-	private void Awake(){
+	private void Awake()
+	{
 		m_rb = GetComponent<Rigidbody> ();
 	}
 
-	private void OnEnable(){
+	private void OnEnable()
+	{
 		isPlaying = true;
 	}
 
-	private void OnDisable(){
+	private void OnDisable()
+	{
 	}
 
-	private void Update(){
+	private void Update()
+	{
 		if (isPlaying) {
 			InitializeHorizontalMovement ();
 			HorizontalMovement (transform);
 			//FixPlayerVelocity ();
 		}
+
+
 	}
 
 	//For Gravity Related
@@ -80,15 +86,17 @@ public class PlayerController : MonoBehaviour {
 	//FromToRotation: unadjustable speed which look at the target position instantly
 		//player.rotation = Quaternion.FromToRotation((player.position - Vector3.right), player.position);
 
-	private void FixedUpdate(){
+	private void FixedUpdate()
+	{
 		if (isPlaying) {
 			m_rb.MovePosition (transform.position + hMovement);
 			ResetPlayerRotation (transform);
-			CameraMovement (cam_min_x, cam_max_x);
+			//CameraMovement (cam_min_x, cam_max_x);
 		}
 	}
 
-	private void CameraMovement(float min_cam_x, float max_cam_x){
+	private void CameraMovement(float min_cam_x, float max_cam_x)
+	{
 		if(mainCamera.transform.position.x >= min_cam_x && mainCamera.transform.position.x <= max_cam_x){
 			mainCamera.transform.position += hMovement;
 		}
@@ -100,7 +108,8 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	private void InitializeHorizontalMovement(){
+	private void InitializeHorizontalMovement()
+	{
 		hAxis = Input.GetAxis (s_horizontal);
 		m_speed = speed * Time.deltaTime;
 		hMovement = new Vector3 (hAxis, 0, 0) * m_speed;
@@ -108,8 +117,8 @@ public class PlayerController : MonoBehaviour {
 	private bool clamp;
 	[SerializeField] private float clampCooldown = 1;
 	private float m_clampCooldown;
-	private void HorizontalMovement(Transform player){
-		
+	private void HorizontalMovement(Transform player)
+	{
 		if (Input.GetButton (s_horizontal)) {
 			//freeze x,y,z pos b4 use to avoid collision
 //			if (Input.GetAxis (s_horizontal) > 0 && Input.GetAxis (s_horizontal) < 1) {
@@ -148,7 +157,8 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	private void ResetPlayerRotation(Transform player){
+	private void ResetPlayerRotation(Transform player)
+	{
 		if (clamp) {
 			//cant use this because euler angle starts calculating at 0 again and ends at 360
 			//			if (player.eulerAngles.y < 90 && player.eulerAngles.y >= 270) {
@@ -166,7 +176,8 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	private void FixPlayerVelocity(){
+	private void FixPlayerVelocity()
+	{
 		if (Input.GetButtonUp (s_horizontal))
 			m_rb.velocity = Vector3.zero;
 	}

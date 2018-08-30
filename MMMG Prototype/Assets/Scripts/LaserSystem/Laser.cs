@@ -24,6 +24,15 @@ namespace laser {
 		[SerializeField] private GameObject roomLayer = null; 
 		SwitchRoom switchRoom;
 
+		public Reflect reflect;
+		public LaserGunToReflector LG_to_R;
+		public LaserReflectorToSensor LR_to_S;
+
+		void Start()
+		{
+			reflect = GetComponent<Reflect> ();
+		}
+
 		private void LaserDirection(){
 			heading = gunNozzle.position - laserGun.position;
 			distance = heading.magnitude;
@@ -64,6 +73,11 @@ namespace laser {
 				if (currentHitObj.CompareTag (tags.s_reflector)) {
 					Reflect reflect = currentHitObj.GetComponent<Reflect> ();
 					reflect.isReflect = true;
+
+					if (!switchRoom.isSwitching) {						
+						reflect.isReflect_ = true;
+					}
+
 					//ignore one of them for different laser source
 					if (laser1) {
 						reflect.laser1 = true;
@@ -93,6 +107,10 @@ namespace laser {
 					Portal portal = currentHitObj.GetComponent<Portal> ();
 					portal.isPortal_1I = true;
 					portal.laserDirection = direction;
+
+					LG_to_R.hit_Portal_1 = true;
+					LR_to_S.hittedPortal_1 = true;
+
 					if (laser1)
 						portal.laser1 = true;
 					else if(laser2)
@@ -111,6 +129,10 @@ namespace laser {
 					Portal portal = currentHitObj.GetComponent<Portal> ();
 					portal.isPortal_2I = true;
 					portal.laserDirection = direction;
+
+					LG_to_R.hit_Portal_2 = true;
+					LR_to_S.hittedPortal_2 = true;
+
 					if (laser1)
 						portal.laser1 = true;
 					else if(laser2)

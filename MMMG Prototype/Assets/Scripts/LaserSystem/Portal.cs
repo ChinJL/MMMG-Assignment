@@ -16,6 +16,10 @@ public class Portal : MonoBehaviour {
 
 	Portal portal1In, portal1Out, portal2In, portal2Out;
 
+	public SwitchRoom switchRoom;
+
+	public LaserForPortal laser_Portal;
+
 	private void Awake(){
 		portal1In = portal_1In.GetComponent<Portal> ();
 		portal1Out = portal_1Out.GetComponent<Portal> ();
@@ -27,6 +31,18 @@ public class Portal : MonoBehaviour {
 		if (isPortal_1I) {
 			if (portal_1Out.gameObject.activeSelf) {
 				ShootLaser (portal_1Out, laserDirection);
+
+				if (!laser_Portal.hit_Reflector)
+				{
+					if (laserDirection.x > 0)
+					{
+						laser_Portal.Laser_1_or_Laser_2 = false;
+					}
+					if (laserDirection.x < 0)
+					{
+						laser_Portal.Laser_1_or_Laser_2 = true;
+					}
+				}
 			}
 			portal1In.isPortal_1I = false;
 		}
@@ -70,6 +86,15 @@ public class Portal : MonoBehaviour {
 			if (currentHitObj.CompareTag (tags.s_reflector)) {
 				Reflect reflect = currentHitObj.GetComponent<Reflect> ();
 				reflect.isReflect = true;
+
+				laser_Portal.hit_Reflector = true;
+
+				if (!switchRoom.isSwitching) {						
+					reflect.isReflect_ = true;
+				}
+
+				laser_Portal.ON_OFF = false;
+
 				if (laser1)
 					reflect.laser1 = true;
 				else if(laser2)
@@ -128,6 +153,7 @@ public class Portal : MonoBehaviour {
 					portal.laser2 = true;
 			}
 			else {
+				
 			}
 		} else {
 		}

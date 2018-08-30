@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class LightSwitch : MonoBehaviour {
 	//[SerializeField] private SpriteRenderer[] graffiti_spriteRend = null;
@@ -30,16 +31,41 @@ public class LightSwitch : MonoBehaviour {
 	public void ToggleLight(){
 		isLightOn = !isLightOn;
 		directionalLight.SetActive (isLightOn);
-		if (isLightOn) {
-			foreach (SpriteRenderer wall in walls) {
+		if (isLightOn)
+		{
+			foreach (SpriteRenderer wall in walls)
+			{
 				wall.color = white;
 			}
-			StartCoroutine (SwitchOnLight());
-		} else {
-			foreach (SpriteRenderer wall in walls) {
+			StartCoroutine (SwitchOnLight ());
+
+			GameObject[] HiddenPath = GameObject.FindGameObjectsWithTag ("HiddenPathTrigger");
+			foreach (GameObject HP in HiddenPath)
+			{
+				HiddenPathTrigger hiddenPath = HP.GetComponent<HiddenPathTrigger> ();
+				if (hiddenPath.isShowing)
+				{
+					hiddenPath.mesh.enabled = false;
+				}
+			}
+		}
+		else
+		{
+			foreach (SpriteRenderer wall in walls)
+			{
 				wall.color = grey;
 			}
-			StartCoroutine (SwitchOffLight());
+			StartCoroutine (SwitchOffLight ());
+
+			GameObject[] HiddenPath = GameObject.FindGameObjectsWithTag ("HiddenPathTrigger");
+			foreach (GameObject HP in HiddenPath)
+			{
+				HiddenPathTrigger hiddenPath = HP.GetComponent<HiddenPathTrigger> ();
+				if (hiddenPath.isShowing)
+				{
+					hiddenPath.mesh.enabled = true;
+				}
+			}
 		}
 	}
 

@@ -6,6 +6,7 @@ public class Reflect : MonoBehaviour {
 	public bool laser1, laser2;
 	[SerializeField] private float reflect_offSet = 0;
 	public bool isReflect;
+	public bool isReflect_ = false;
 	[SerializeField] private Transform reflector = null, reflectionPoint = null;
 	private Vector3 laserDir;
 	private float laserLength = 10;
@@ -23,6 +24,7 @@ public class Reflect : MonoBehaviour {
 			if (Physics.Raycast (laserRay, out hit, Mathf.Infinity)) {
 				currentHitObject = hit.transform.gameObject;
 				Debug.DrawLine (reflectionPoint.position, hit.point, Color.red);
+
 			} else {
 				currentHitObject = null;
 			}
