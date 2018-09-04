@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class DoorTriggerLevel1 : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+	public GameObject doorTrigger;
+	public GameObject doorTrigger_2;
 	
 	// Update is called once per frame
 	void Update () {
@@ -19,6 +17,8 @@ public class DoorTriggerLevel1 : MonoBehaviour {
 		if (col.tag == ("Player"))
 		{
 			Destroy (gameObject);
+			gameObject.SetActive (true);
+			doorTrigger_2.SetActive (true);
 		}
 	}
 }

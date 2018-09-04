@@ -10,6 +10,8 @@ public class GravityControl : MonoBehaviour {
 
 	public LightSwitch lightSwitch;
 
+	public Animator anim;
+
 	// Use this for initialization
 	void Start () {
 		m_rb = GetComponent<Rigidbody> ();

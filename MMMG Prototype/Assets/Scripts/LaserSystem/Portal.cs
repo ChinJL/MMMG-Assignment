@@ -18,7 +18,15 @@ public class Portal : MonoBehaviour {
 
 	public SwitchRoom switchRoom;
 
-	public LaserForPortal laser_Portal;
+	public LineRenderer lineRenderer;
+	public bool Hitted = true;
+
+	void Start()
+	{
+		lineRenderer = GetComponent<LineRenderer> ();
+		lineRenderer.enabled = false;
+		lineRenderer.useWorldSpace = true;
+	}
 
 	private void Awake(){
 		portal1In = portal_1In.GetComponent<Portal> ();
@@ -31,18 +39,6 @@ public class Portal : MonoBehaviour {
 		if (isPortal_1I) {
 			if (portal_1Out.gameObject.activeSelf) {
 				ShootLaser (portal_1Out, laserDirection);
-
-				if (!laser_Portal.hit_Reflector)
-				{
-					if (laserDirection.x > 0)
-					{
-						laser_Portal.Laser_1_or_Laser_2 = false;
-					}
-					if (laserDirection.x < 0)
-					{
-						laser_Portal.Laser_1_or_Laser_2 = true;
-					}
-				}
 			}
 			portal1In.isPortal_1I = false;
 		}
@@ -76,9 +72,15 @@ public class Portal : MonoBehaviour {
 		Debug.DrawRay (portalTransform.position, direction * laserLength, Color.cyan);
 		if (Physics.Raycast (laserRay, out hit, Mathf.Infinity)) {
 			currentHitObject = hit.transform.gameObject;
+			lineRenderer.enabled = true;
+			lineRenderer.SetPosition (0, portalTransform.position);
+			lineRenderer.SetPosition (1, hit.point);
 		} else {
 			currentHitObject = null;
 		}
+			
+//		lineRenderer.SetPosition (0, portalTransform.position);
+//		lineRenderer.SetPosition (1, currentHitObject.transform.position);
 	}
 
 	private void LaserEffect(GameObject currentHitObj){
@@ -87,13 +89,9 @@ public class Portal : MonoBehaviour {
 				Reflect reflect = currentHitObj.GetComponent<Reflect> ();
 				reflect.isReflect = true;
 
-				laser_Portal.hit_Reflector = true;
-
 				if (!switchRoom.isSwitching) {						
 					reflect.isReflect_ = true;
 				}
-
-				laser_Portal.ON_OFF = false;
 
 				if (laser1)
 					reflect.laser1 = true;
