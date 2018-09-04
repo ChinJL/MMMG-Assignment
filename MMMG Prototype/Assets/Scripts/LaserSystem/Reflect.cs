@@ -14,6 +14,18 @@ public class Reflect : MonoBehaviour {
 
 	private GameObject currentHitObject;
 
+	public LineRenderer lineRenderer;
+	public Portal portal_1;
+	public Portal portal_2;
+	bool EnableOpen = false;
+
+	void Start()
+	{
+		lineRenderer = GetComponent<LineRenderer> ();
+		lineRenderer.enabled = false;
+		lineRenderer.useWorldSpace = true;
+	}
+
 	private void Update(){
 		
 		if (isReflect) {
@@ -24,6 +36,14 @@ public class Reflect : MonoBehaviour {
 			if (Physics.Raycast (laserRay, out hit, Mathf.Infinity)) {
 				currentHitObject = hit.transform.gameObject;
 				Debug.DrawLine (reflectionPoint.position, hit.point, Color.red);
+				lineRenderer.enabled = true;
+				EnableOpen = true;
+
+				if (EnableOpen)
+				{
+					lineRenderer.SetPosition (0, reflectionPoint.position);
+					lineRenderer.SetPosition (1, hit.point);
+				}
 
 			} else {
 				currentHitObject = null;
@@ -32,9 +52,12 @@ public class Reflect : MonoBehaviour {
 		}
 		else {
 			currentHitObject = null;
+			EnableOpen = false;
 		}
 
 		LaserEffect (currentHitObject);
+
+
 	}
 
 	private Vector3 LaserDirection(){

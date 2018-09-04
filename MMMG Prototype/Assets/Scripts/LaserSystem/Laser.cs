@@ -24,12 +24,16 @@ namespace laser {
 		[SerializeField] private GameObject roomLayer = null; 
 		SwitchRoom switchRoom;
 
+		private LineRenderer lineRenderer;
+
 		public Reflect reflect;
-		public LaserGunToReflector LG_to_R;
-		public LaserReflectorToSensor LR_to_S;
 
 		void Start()
 		{
+			lineRenderer = GetComponent<LineRenderer> ();
+			lineRenderer.enabled = false;
+			lineRenderer.useWorldSpace = true;
+
 			reflect = GetComponent<Reflect> ();
 		}
 
@@ -59,12 +63,19 @@ namespace laser {
 			Ray laserRay = new Ray (gunNozzle.position, direction);
 			RaycastHit hit;
 			Debug.DrawRay (gunNozzle.position, direction * laserLength, Color.green);
+
 			if (Physics.Raycast (laserRay, out hit, Mathf.Infinity)) {
 				currentHitObject = hit.transform.gameObject;
 				Debug.DrawLine (gunNozzle.position, hit.point, Color.red);
+				lineRenderer.enabled = true;
+				lineRenderer.SetPosition (0, gunNozzle.position);
+				lineRenderer.SetPosition (1, hit.point);
 			} else {
 				currentHitObject = null;
 			}
+
+//			lineRenderer.SetPosition (0, gunNozzle.position);
+//			lineRenderer.SetPosition (1, currentHitObject.transform.position);
 		}
 
 		//reference: https://www.youtube.com/watch?v=Nplcqwq_oJU
@@ -107,10 +118,6 @@ namespace laser {
 					Portal portal = currentHitObj.GetComponent<Portal> ();
 					portal.isPortal_1I = true;
 					portal.laserDirection = direction;
-
-					LG_to_R.hit_Portal_1 = true;
-					LR_to_S.hittedPortal_1 = true;
-
 					if (laser1)
 						portal.laser1 = true;
 					else if(laser2)
@@ -129,10 +136,6 @@ namespace laser {
 					Portal portal = currentHitObj.GetComponent<Portal> ();
 					portal.isPortal_2I = true;
 					portal.laserDirection = direction;
-
-					LG_to_R.hit_Portal_2 = true;
-					LR_to_S.hittedPortal_2 = true;
-
 					if (laser1)
 						portal.laser1 = true;
 					else if(laser2)

@@ -14,6 +14,7 @@ TagManager:
   - LaserGun
   - Box
   - HiddenPathTrigger
+  - Button
   layers:
   - Default
   - TransparentFX

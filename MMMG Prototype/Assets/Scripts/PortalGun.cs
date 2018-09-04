@@ -23,6 +23,9 @@ public class PortalGun : MonoBehaviour {
 	[SerializeField] private KeyCode aimKey = KeyCode.None, shootKey = KeyCode.None, resetKey = KeyCode.None;
 	[SerializeField] private LineRenderer lineRend = null;
 
+	public Portal portal_1;
+	public Portal portal_2;
+
 	private void OnEnable(){
 		isShoot = false;
 		isReached = true;
@@ -85,9 +88,10 @@ public class PortalGun : MonoBehaviour {
 	}
 
 	private void Shoot(Vector3 location){
-		//if (Input.GetKeyDown (shootKey) && isReached) {
-		if (Input.GetKey(KeyCode.Mouse0) && isReached)
+		if (Input.GetKeyDown (shootKey) && isReached) 
+		//if (Input.GetKey(KeyCode.Mouse0) && isReached)
 		{	
+			
 			isReached = false;
 			Vector3 aimedPos = location;
 			aimedPos = aimedPos + (Vector3.down * offset_y);
@@ -105,6 +109,8 @@ public class PortalGun : MonoBehaviour {
 
 		if (Input.GetKeyDown (resetKey) && isReached) {
 			ResetPortal ();
+			portal_1.lineRenderer.enabled = false;
+			portal_2.lineRenderer.enabled = false;
 		}
 	}
 

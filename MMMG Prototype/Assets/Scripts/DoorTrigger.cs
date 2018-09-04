@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorTrigger : MonoBehaviour {
 	private string plyer = "Player";
@@ -15,6 +16,7 @@ public class DoorTrigger : MonoBehaviour {
 			//next level
 			print("You WIN");
 			m_col.enabled = false;
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 		}
 	}
 }

@@ -1,21 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Level 1\HiddenPathTrigger.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LaserSystem\Portal.cs">
     <Files>
-      <File FileName="Assets\Scripts\Level 1\HiddenPathTrigger.cs" Line="50" Column="22" />
-      <File FileName="Assets\Scripts\LightSwitch.cs" Line="64" Column="9" />
-      <File FileName="Assets\Scripts\LaserSystem\Laser.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LaserSystem\Reflect.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LaserSystem\Portal.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LaserSystem\LaserGunToReflector.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LaserSystem\LaserReflectorToSensor.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PortalGun.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LayerSystem\SwitchRoom.cs" Line="65" Column="5" />
-      <File FileName="Assets\Scripts\PlayerController.cs" Line="16" Column="2" />
-      <File FileName="Assets\Scripts\Level 1\GravityControl.cs" Line="28" Column="6" />
-      <File FileName="Assets\Scripts\CameraControl.cs" Line="9" Column="24" />
-      <File FileName="Assets\Scripts\DoorTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Level 1\BoxFloating.cs" Line="16" Column="35" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="188" Column="4" />
+      <File FileName="Assets\Scripts\LayerSystem\SwitchRoom.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Level 1\GravityControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PortalGun.cs" Line="27" Column="25" />
+      <File FileName="Assets\Scripts\CameraControl.cs" Line="14" Column="25" />
+      <File FileName="Assets\Scripts\LaserSystem\Portal.cs" Line="120" Column="44" />
+      <File FileName="Assets\Scripts\LaserSystem\Laser.cs" Line="29" Column="26" />
+      <File FileName="Assets\Scripts\LaserSystem\Reflect.cs" Line="46" Column="6" />
+      <File FileName="Assets\Scripts\LaserSystem\LaserGunToReflector.cs" Line="64" Column="5" />
+      <File FileName="Assets\Scripts\LaserSystem\LaserReflectorToSensor.cs" Line="56" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

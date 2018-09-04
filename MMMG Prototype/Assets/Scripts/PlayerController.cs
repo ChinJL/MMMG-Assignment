@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
 	private Rigidbody m_rb;
@@ -14,7 +15,12 @@ public class PlayerController : MonoBehaviour {
 	[HideInInspector] public bool isPlaying;
 	//[SerializeField] private Transform tempObj;
 
+	float directionX;
+	public float moveSpeed = 5f;
+
 	private string s_horizontal = "Horizontal";
+
+	public Animator anim;
 
 	private void Awake()
 	{
@@ -30,6 +36,10 @@ public class PlayerController : MonoBehaviour {
 	{
 	}
 
+	private void Start()
+	{
+	}
+
 	private void Update()
 	{
 		if (isPlaying) {
@@ -38,7 +48,9 @@ public class PlayerController : MonoBehaviour {
 			//FixPlayerVelocity ();
 		}
 
+		m_rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
+		directionX = CrossPlatformInputManager.GetAxis (s_horizontal);
 	}
 
 	//For Gravity Related
@@ -93,6 +105,8 @@ public class PlayerController : MonoBehaviour {
 			ResetPlayerRotation (transform);
 			//CameraMovement (cam_min_x, cam_max_x);
 		}
+
+		m_rb.velocity = new Vector2 (directionX * moveSpeed, m_rb.velocity.y);
 	}
 
 	private void CameraMovement(float min_cam_x, float max_cam_x)
@@ -114,12 +128,14 @@ public class PlayerController : MonoBehaviour {
 		m_speed = speed * Time.deltaTime;
 		hMovement = new Vector3 (hAxis, 0, 0) * m_speed;
 	}
+
 	private bool clamp;
 	[SerializeField] private float clampCooldown = 1;
 	private float m_clampCooldown;
-	private void HorizontalMovement(Transform player)
+	public void HorizontalMovement(Transform player)
 	{
-		if (Input.GetButton (s_horizontal)) {
+		if (Input.GetButton (s_horizontal))
+		{
 			//freeze x,y,z pos b4 use to avoid collision
 //			if (Input.GetAxis (s_horizontal) > 0 && Input.GetAxis (s_horizontal) < 1) {
 //				player.rotation = Quaternion.Slerp (player.rotation, y_right1, rotationSpeed * Time.deltaTime);
@@ -133,19 +149,28 @@ public class PlayerController : MonoBehaviour {
 //			if (Input.GetAxis (s_horizontal) == -1) {
 //				player.rotation = Quaternion.Slerp (player.rotation, y_left, rotationSpeed * Time.deltaTime);
 //			}
+
 			clamp = false;
 			m_clampCooldown = clampCooldown;
-			if (Input.GetAxis (s_horizontal) > 0 && Input.GetAxis (s_horizontal) < 1) {
+			if (Input.GetAxis (s_horizontal) > 0 && Input.GetAxis (s_horizontal) < 1)
+			{
 				player.rotation = Quaternion.RotateTowards (player.rotation, y_right1, rotationSpeed);
+				//anim.SetBool ("isRunningRight", true);
 			}
-			if (Input.GetAxis (s_horizontal) > -1 && Input.GetAxis (s_horizontal) < 0) {
+			if (Input.GetAxis (s_horizontal) > -1 && Input.GetAxis (s_horizontal) < 0)
+			{
 				player.rotation = Quaternion.RotateTowards (player.rotation, y_left1, rotationSpeed);
+				//anim.SetBool ("isRunningLeft", true);
 			}
-			if (Input.GetAxis (s_horizontal) == 1) {
+			if (Input.GetAxis (s_horizontal) == 1)
+			{
 				player.rotation = Quaternion.RotateTowards (player.rotation, y_right, rotationSpeed);
+				//anim.SetBool ("isRunningRight", true);
 			}
-			if (Input.GetAxis (s_horizontal) == -1) {
+			if (Input.GetAxis (s_horizontal) == -1)
+			{
 				player.rotation = Quaternion.RotateTowards (player.rotation, y_left, rotationSpeed);
+				//anim.SetBool ("isRunningLeft", true);
 			}
 		}
 		else {
@@ -154,6 +179,13 @@ public class PlayerController : MonoBehaviour {
 			} else {
 				m_clampCooldown -= Time.deltaTime;
 			}
+//			anim.SetBool ("isRunningRight", false);
+//			anim.SetBool ("isRunningLeft", false);
+		}
+
+		if (CrossPlatformInputManager.GetButton (s_horizontal))
+		{
+			
 		}
 	}
 

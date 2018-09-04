@@ -23,7 +23,7 @@ public class LaserReflectorToSensor : MonoBehaviour {
 	void Update()
 	{
 		//reflectorToSensor = true;
-		ReflectorToSensor ();
+		//ReflectorToSensor ();
 
 		if (reflect.isReflect_) {
 			lineRenderer.enabled = true;
@@ -34,38 +34,38 @@ public class LaserReflectorToSensor : MonoBehaviour {
 		}
 	}
 
-	void ReflectorToSensor()
-	{
-		if (!hittedPortal_1 || !hittedPortal_2)
-		{
-			lineRenderer.SetPosition (0, reflector.position);
-			lineRenderer.SetPosition (1, sensor.position);
-		}
-		if (hittedPortal_1)
-		{
-			if (!reflect.isReflect_)
-			{
-				lineRenderer.SetPosition (0, reflector.position);
-				lineRenderer.SetPosition (1, reflector.position);
-			}
-			else
-			{
-				lineRenderer.SetPosition (0, reflector.position);
-				lineRenderer.SetPosition (1, sensor.position);
-			}
-		}
-		if (hittedPortal_2)
-		{
-			if (!reflect.isReflect_)
-			{
-				lineRenderer.SetPosition (0, reflector.position);
-				lineRenderer.SetPosition (1, reflector.position);
-			}
-			else
-			{
-				lineRenderer.SetPosition (0, reflector.position);
-				lineRenderer.SetPosition (1, sensor.position);
-			}
-		}
-	}
+//	void ReflectorToSensor()
+//	{
+//		if (!hittedPortal_1 || !hittedPortal_2)
+//		{
+//			lineRenderer.SetPosition (0, reflector.position);
+//			lineRenderer.SetPosition (1, sensor.position);
+//		}
+//		if (hittedPortal_1)
+//		{
+//			if (!reflect.isReflect_)
+//			{
+//				lineRenderer.SetPosition (0, reflector.position);
+//				lineRenderer.SetPosition (1, reflector.position);
+//			}
+//			else
+//			{
+//				lineRenderer.SetPosition (0, reflector.position);
+//				lineRenderer.SetPosition (1, sensor.position);
+//			}
+//		}
+//		if (hittedPortal_2)
+//		{
+//			if (!reflect.isReflect_)
+//			{
+//				lineRenderer.SetPosition (0, reflector.position);
+//				lineRenderer.SetPosition (1, reflector.position);
+//			}
+//			else
+//			{
+//				lineRenderer.SetPosition (0, reflector.position);
+//				lineRenderer.SetPosition (1, sensor.position);
+//			}
+//		}
+//	}
 }
