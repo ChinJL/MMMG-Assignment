@@ -10,6 +10,7 @@ public class MovementController : MonoBehaviour {
 	private float m_speed;
 	private Vector3 hMovement;
 	private bool isLeft, isRight;
+	[SerializeField]private Animator anim = null;
 
 	private void OnEnable(){
 		m_rb = GetComponent<Rigidbody>();
@@ -27,16 +28,19 @@ public class MovementController : MonoBehaviour {
 	public void MoveLeft(){
 		isLeft = true;
 		FlipLeft ();
+		anim.SetFloat ("isMoving", 1);
 	}
 
 	public void ResetMovement(){
 		isLeft = false;
 		isRight = false;
+		anim.SetFloat ("isMoving", 0);
 	}
 
 	public void MoveRight(){
 		isRight = true;
 		FlipRight ();
+		anim.SetFloat ("isMoving", 1);
 	}
 
 	private void DecideDirection(){

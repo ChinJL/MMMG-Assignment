@@ -21,14 +21,6 @@ public class GravityControl : MonoBehaviour {
 	void FixedUpdate () {
 		m_rb.AddForce (transform.up * 50);
 
-//		if (lightSwitch.isLightOn)
-//		{
-//			if (Input.GetMouseButtonDown (0))
-//			{
-//				gravityControl = !gravityControl;
-//			}
-//		}
-
 		if (gravityControl)
 		{
 			m_rb.mass = 3;
