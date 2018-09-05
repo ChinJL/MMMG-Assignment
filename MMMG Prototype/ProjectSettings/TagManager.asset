@@ -15,6 +15,9 @@ TagManager:
   - Box
   - HiddenPathTrigger
   - Button
+  - Fake
+  - True
+  - Ball
   layers:
   - Default
   - TransparentFX
