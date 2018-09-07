@@ -389,14 +389,14 @@ MonoBehaviour:
   reflectors:
   - {fileID: 1115402922}
   - {fileID: 1626167385}
-  player_rb: {fileID: 735009939}
   player: {fileID: 735009936}
   portalObj:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Reflector_1_or_Reflector_2: 0
+  moveLeft: {fileID: 0}
+  moveRight: {fileID: 0}
 --- !u!114 &104113353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,6 +417,7 @@ MonoBehaviour:
   - {fileID: 976514722}
   isLightOn: 0
   graffiti_mat: {fileID: 2100000, guid: e2fbcdd9978a6534abaed3f4b778d8aa, type: 2}
+  isLvl1: 0
 --- !u!114 &104113354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,6 +433,7 @@ MonoBehaviour:
   laserSensor1_MeshRend: {fileID: 2014162317}
   laserSensor2_MeshRend: {fileID: 1900249574}
   secretDoor_mat: {fileID: 241342863}
+  ps_ground: {fileID: 0}
 --- !u!1 &158279085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,7 +1271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorTrigger: {fileID: 799169546}
-  doorTrigger_2: {fileID: 0}
 --- !u!1 &378746671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,11 +2589,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1732272640957312, guid: 692e7a83a56ebdf499f0820f72199149,
     type: 2}
   m_PrefabInternal: {fileID: 1560833699}
---- !u!54 &735009939 stripped
-Rigidbody:
-  m_PrefabParentObject: {fileID: 54497046073587252, guid: 692e7a83a56ebdf499f0820f72199149,
-    type: 2}
-  m_PrefabInternal: {fileID: 1560833699}
 --- !u!4 &735009942 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4264227376537478, guid: 692e7a83a56ebdf499f0820f72199149,
@@ -2992,10 +2988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab98b66288df7b4fa182075f2f12bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisName: Horizontal
-  axisValue: -1
-  responseSpeed: 3
-  returnToCentreSpeed: 3
 --- !u!1 &863053581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,21 +3093,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af83e86ad08d62f4d852b100de06e018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser1: 1
-  laser2: 0
-  laserGun: {fileID: 879207455}
-  gunNozzle: {fileID: 1589487297}
-  roomLayer: {fileID: 104113350}
-  reflect: {fileID: 1115402923}
-  laserLength: 10
-  tags:
-    s_reflector: Reflector
-    s_laserSensor_1: LaserSensor1
-    s_laserSensor_2: LaserSensor2
-    s_portal_1I: Portal_1I
-    s_portal_1O: Portal_1O
-    s_portal_2I: Portal_2I
-    s_portal_2O: Portal_2O
 --- !u!23 &879207452
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3282,13 +3259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2c29f34a82d6748ab9b1a76915870a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflector_1: {fileID: 1115402927}
-  reflector_2: {fileID: 1626167390}
-  portal_1: {fileID: 0}
-  portal_2: {fileID: 0}
-  switchRoom: {fileID: 104113352}
-  hit_Portal_1: 0
-  hit_Portal_2: 0
 --- !u!1 &938928566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,24 +4029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f110bb8322a0e40a12be1cc2c5575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser1: 0
-  laser2: 0
-  reflect_offSet: 0.5
-  isReflect: 0
-  isReflect_: 0
-  reflector: {fileID: 1115402927}
-  reflectionPoint: {fileID: 378746672}
-  tags:
-    s_reflector: Reflector
-    s_laserSensor_1: LaserSensor1
-    s_laserSensor_2: LaserSensor2
-    s_portal_1I: Portal_1I
-    s_portal_1O: Portal_1O
-    s_portal_2I: Portal_2I
-    s_portal_2O: Portal_2O
-  lineRenderer: {fileID: 0}
-  portal_1: {fileID: 0}
-  portal_2: {fileID: 0}
 --- !u!23 &1115402924
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4244,11 +4196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acad45cab43648145bf7f9ebf22c08b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflect: {fileID: 1115402923}
-  reflector: {fileID: 57123204}
-  sensor: {fileID: 2014162320}
-  hittedPortal_1: 0
-  hittedPortal_2: 0
 --- !u!1 &1131281475
 GameObject:
   m_ObjectHideFlags: 0
@@ -5126,21 +5073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af83e86ad08d62f4d852b100de06e018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser1: 0
-  laser2: 1
-  laserGun: {fileID: 1435694324}
-  gunNozzle: {fileID: 810267105}
-  roomLayer: {fileID: 104113350}
-  reflect: {fileID: 1626167386}
-  laserLength: 10
-  tags:
-    s_reflector: Reflector
-    s_laserSensor_1: LaserSensor1
-    s_laserSensor_2: LaserSensor2
-    s_portal_1I: Portal_1I
-    s_portal_1O: Portal_1O
-    s_portal_2I: Portal_2I
-    s_portal_2O: Portal_2O
 --- !u!23 &1435694321
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5307,13 +5239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2c29f34a82d6748ab9b1a76915870a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflector_1: {fileID: 1626167390}
-  reflector_2: {fileID: 1115402927}
-  portal_1: {fileID: 0}
-  portal_2: {fileID: 0}
-  switchRoom: {fileID: 104113352}
-  hit_Portal_1: 0
-  hit_Portal_2: 0
 --- !u!1 &1439316658
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,24 +6315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f110bb8322a0e40a12be1cc2c5575e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser1: 0
-  laser2: 0
-  reflect_offSet: -0.5
-  isReflect: 0
-  isReflect_: 0
-  reflector: {fileID: 1626167390}
-  reflectionPoint: {fileID: 1910525064}
-  tags:
-    s_reflector: Reflector
-    s_laserSensor_1: LaserSensor1
-    s_laserSensor_2: LaserSensor2
-    s_portal_1I: Portal_1I
-    s_portal_1O: Portal_1O
-    s_portal_2I: Portal_2I
-    s_portal_2O: Portal_2O
-  lineRenderer: {fileID: 0}
-  portal_1: {fileID: 0}
-  portal_2: {fileID: 0}
 --- !u!23 &1626167387
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6575,11 +6482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acad45cab43648145bf7f9ebf22c08b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reflect: {fileID: 1626167386}
-  reflector: {fileID: 2036580057}
-  sensor: {fileID: 1900249577}
-  hittedPortal_1: 0
-  hittedPortal_2: 0
 --- !u!1 &1629183253
 GameObject:
   m_ObjectHideFlags: 0
@@ -7081,10 +6983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab98b66288df7b4fa182075f2f12bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisName: Horizontal
-  axisValue: 1
-  responseSpeed: 3
-  returnToCentreSpeed: 3
 --- !u!1 &1838303652
 GameObject:
   m_ObjectHideFlags: 0
@@ -7273,10 +7171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63a5803a0836f14ab2906182e170538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser1: 0
-  laser2: 0
-  isSensor1: 0
-  isSensor2: 0
 --- !u!23 &1900249574
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7811,10 +7705,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63a5803a0836f14ab2906182e170538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laser1: 0
-  laser2: 0
-  isSensor1: 0
-  isSensor2: 0
 --- !u!23 &2014162317
 MeshRenderer:
   m_ObjectHideFlags: 0

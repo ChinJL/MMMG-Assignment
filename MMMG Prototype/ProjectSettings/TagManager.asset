@@ -18,6 +18,10 @@ TagManager:
   - Fake
   - True
   - Ball
+  - LaserCannon
+  - LaserReflect
+  - LaserSensor
+  - LaserPortal
   layers:
   - Default
   - TransparentFX

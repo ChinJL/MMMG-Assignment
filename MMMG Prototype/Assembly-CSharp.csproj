@@ -44,78 +44,71 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/Managed\UnityEngine.dll</HintPath>
+      <HintPath>D:/Unity/Editor/Data/Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MovementController.cs" />
-     <Compile Include="Assets\Scripts\CameraControl.cs" />
-     <Compile Include="Assets\Scripts\DoorTrigger.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\LaserSystem\Laser.cs" />
-     <Compile Include="Assets\Scripts\LaserSystem\LaserForPortal.cs" />
-     <Compile Include="Assets\Scripts\LaserSystem\LaserGunToReflector.cs" />
-     <Compile Include="Assets\Scripts\LaserSystem\LaserReflectorToSensor.cs" />
-     <Compile Include="Assets\Scripts\LaserSystem\LaserSensor.cs" />
-     <Compile Include="Assets\Scripts\LaserSystem\Level4Laser.cs" />
-     <Compile Include="Assets\Scripts\LaserSystem\Portal.cs" />
-     <Compile Include="Assets\Scripts\LaserSystem\Reflect.cs" />
-     <Compile Include="Assets\Scripts\LayerSystem\SwitchRoom.cs" />
+     <Compile Include="Assets\Scripts\General\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\General\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\General\DoorTrigger.cs" />
+     <Compile Include="Assets\Scripts\General\MovementController.cs" />
      <Compile Include="Assets\Scripts\Level 1\BoxFloating.cs" />
      <Compile Include="Assets\Scripts\Level 1\DoorTriggerLevel1.cs" />
      <Compile Include="Assets\Scripts\Level 1\GravityControl.cs" />
      <Compile Include="Assets\Scripts\Level 1\HiddenPathTrigger.cs" />
      <Compile Include="Assets\Scripts\Level 1\ShowTheDoor.cs" />
-     <Compile Include="Assets\Scripts\Level2Unlock.cs" />
-     <Compile Include="Assets\Scripts\LightSwitch.cs" />
-     <Compile Include="Assets\Scripts\Platform.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\PortalGun.cs" />
-     <Compile Include="Assets\Scripts\Spawning.cs" />
-     <Compile Include="Assets\Scripts\UnlockDoor.cs" />
+     <Compile Include="Assets\Scripts\Level 2\Level2Unlock.cs" />
+     <Compile Include="Assets\Scripts\Level 2\Platform.cs" />
+     <Compile Include="Assets\Scripts\Level 2\Spawning.cs" />
+     <Compile Include="Assets\Scripts\Level 3\InventoryUI.cs" />
+     <Compile Include="Assets\Scripts\Level 3\LaserSystem\Laser.cs" />
+     <Compile Include="Assets\Scripts\Level 3\LaserSystem\LaserCannon.cs" />
+     <Compile Include="Assets\Scripts\Level 3\LaserSystem\LaserPortal.cs" />
+     <Compile Include="Assets\Scripts\Level 3\LaserSystem\LaserReceiver.cs" />
+     <Compile Include="Assets\Scripts\Level 3\LaserSystem\LaserReflect.cs" />
+     <Compile Include="Assets\Scripts\Level 3\PortalGun.cs" />
+     <Compile Include="Assets\Scripts\Level 3\RoomSystem\LightSwitch.cs" />
+     <Compile Include="Assets\Scripts\Level 3\RoomSystem\SwitchRoom.cs" />
+     <Compile Include="Assets\Scripts\Level 3\RoomSystem\UnlockDoor.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Timeline">
- <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIAutomation">
- <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>C:/Program Files/Unity 2017.4.3/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Users/USER/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Users/USER/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
- <HintPath>C:/Users/USER/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{68546F79-82FE-A17D-0AE1-3ADC4C52C08F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
