@@ -6,16 +6,30 @@ public class Laser : MonoBehaviour {
 
 	protected Transform laserPoint, laserSource;
 	protected Vector3 direction;
-
+	protected Vector3 hitLocation;
 	private string s_laserCannon = "LaserCannon", s_laserReflect = "LaserReflect", s_laserSensor = "LaserSensor", s_laserPortal = "LaserPortal";
 
-	public LineRenderer lineRenderer;
+	[SerializeField] protected LineRenderer lineRenderer;
 
-	void Start()
+	protected void Awake()
 	{
+		LineRendSetUp ();
+	}
+
+	protected virtual void LineRendSetUp(){
 		lineRenderer = GetComponent<LineRenderer> ();
 		lineRenderer.enabled = false;
 		lineRenderer.useWorldSpace = true;
+	}
+
+	protected virtual void LineRendEnable(){
+		lineRenderer.enabled = true;
+		lineRenderer.SetPosition (0, laserPoint.position);
+		lineRenderer.SetPosition (1, hitLocation);
+	}
+
+	protected virtual void LineRendDisable(){
+		lineRenderer.enabled = false;
 	}
 
 	//Vector3 heading, float distance, Vector3 direction,
@@ -34,6 +48,7 @@ public class Laser : MonoBehaviour {
 			GameObject hitObject = hit.transform.gameObject;
 			if (hitObject != null)
 			{
+				hitLocation = hit.point;
 				DisplayLaser (hit.point, hitObject);
 			}
 		}

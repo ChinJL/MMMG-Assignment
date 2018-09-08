@@ -11,10 +11,6 @@ public class LaserCannon : Laser {
 
 	public bool isPortals = false;
 	public bool isSwitched = false;
-	public GameObject correctReflector_1;
-	public GameObject correctReflector_2;
-	public GameObject portal_1;
-	public GameObject portal_2;
 
 	private void OnEnable(){
 		laserPoint = m_laserPoint;
@@ -29,25 +25,11 @@ public class LaserCannon : Laser {
 		{
 			ShootLaser ();
 			PoweredSound ();
-
-//			if (!isSwitched)
-//			{
-//				lineRenderer.enabled = true;
-//				lineRenderer.SetPosition (0, laserPoint.position);
-//				lineRenderer.SetPosition (1, correctReflector_1.transform.position);
-//			}
-//			else
-//			{
-//				lineRenderer.enabled = true;
-//				lineRenderer.SetPosition (0, laserPoint.position);
-//				lineRenderer.SetPosition (1, correctReflector_2.transform.position);
-//			}
+			LineRendEnable ();
 		}
 		else
 		{
-			lineRenderer.SetPosition(0, Vector3.zero);
-			lineRenderer.SetPosition(1, Vector3.zero);
-			lineRenderer.enabled = false;
+			LineRendDisable ();
 			isShoot = true;
 		}
 	}

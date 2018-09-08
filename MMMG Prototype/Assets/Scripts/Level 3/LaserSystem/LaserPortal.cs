@@ -67,9 +67,7 @@ public class LaserPortal : Laser {
 		}
 		else
 		{
-			lineRenderer.SetPosition (0, Vector3.zero);
-			lineRenderer.SetPosition (1, Vector3.zero);
-			fakeSprite.gameObject.SetActive (false);
+			LineRendDisable ();
 		}
 
 		if (fakeSprite.gameObject.activeSelf)
@@ -88,11 +86,13 @@ public class LaserPortal : Laser {
 				GameObject hitObject = hit.transform.gameObject;
 				if (hitObject != null)
 				{
+					hitLocation = hit.point;
 					DisplayLaser (hit.point, hitObject);
-
-					lineRenderer.enabled = true;
-					lineRenderer.SetPosition (0, laserPoint.position);
-					lineRenderer.SetPosition (1, hitObject.transform.position);
+					LineRendEnable ();
+				}
+				else
+				{
+					lineRenderer.enabled = false;
 				}
 			}
 		}
@@ -139,7 +139,7 @@ public class LaserPortal : Laser {
 		}
 		else
 		{
-			lineRenderer.enabled = false;
+//			lineRenderer.enabled = false;
 			isShot = true;
 		}
 	}

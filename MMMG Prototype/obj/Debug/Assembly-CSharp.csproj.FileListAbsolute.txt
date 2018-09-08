@@ -101,7 +101,6 @@ D:\MMMG Assignment\MMMG Prototype\Temp\bin\Debug\Unity.UNetWeaver.dll
 D:\MMMG Assignment\MMMG Prototype\Temp\bin\Debug\Unity.CecilTools.dll
 D:\MMMG Assignment\MMMG Prototype\Temp\bin\Debug\Unity.Cecil.Pdb.dll
 D:\MMMG Assignment\MMMG Prototype\Temp\bin\Debug\Unity.Cecil.Mdb.dll
-D:\MMMG Assignment\MMMG Prototype\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 D:\MMMG Assignment\MMMG Prototype\Temp\bin\Debug\UnityEngine.xml
 D:\MMMG Assignment\MMMG Prototype\Temp\bin\Debug\UnityEditor.xml
 D:\MMMG Assignment\MMMG Prototype\Temp\bin\Debug\UnityEngine.UI.xml

@@ -6087,7 +6087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd02e62285fdab949ac5ba66c58982b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 0}
+  lineRenderer: {fileID: 520902349}
   powerLvl: 0
   laserDirection: {x: 0, y: 0, z: 0}
   portal1a: {fileID: 1274276348}
@@ -11371,7 +11371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd02e62285fdab949ac5ba66c58982b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 0}
+  lineRenderer: {fileID: 816810426}
   powerLvl: 0
   laserDirection: {x: 0, y: 0, z: 0}
   portal1a: {fileID: 1274276348}
@@ -15237,10 +15237,6 @@ MonoBehaviour:
   roomLayer: {fileID: 104113350}
   isPortals: 0
   isSwitched: 0
-  correctReflector_1: {fileID: 1115402922}
-  correctReflector_2: {fileID: 1626167385}
-  portal_1: {fileID: 1274276347}
-  portal_2: {fileID: 520902343}
 --- !u!23 &879207452
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15895,7 +15891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd02e62285fdab949ac5ba66c58982b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 0}
+  lineRenderer: {fileID: 963804898}
   powerLvl: 0
   laserDirection: {x: 0, y: 0, z: 0}
   portal1a: {fileID: 1274276348}
@@ -21438,7 +21434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd02e62285fdab949ac5ba66c58982b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineRenderer: {fileID: 0}
+  lineRenderer: {fileID: 1274276353}
   powerLvl: 0
   laserDirection: {x: 0, y: 0, z: 0}
   portal1a: {fileID: 1274276348}
@@ -21928,10 +21924,6 @@ MonoBehaviour:
   roomLayer: {fileID: 104113350}
   isPortals: 0
   isSwitched: 0
-  correctReflector_1: {fileID: 1626167385}
-  correctReflector_2: {fileID: 1115402922}
-  portal_1: {fileID: 1274276347}
-  portal_2: {fileID: 520902343}
 --- !u!1 &1439316658
 GameObject:
   m_ObjectHideFlags: 0

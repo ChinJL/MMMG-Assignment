@@ -48,14 +48,11 @@ public class LaserReflect : Laser {
 		{
 			ShootLaser ();
 			ShotSound ();
-
-			lineRenderer.enabled = true;
-			lineRenderer.SetPosition (0, laserPoint.position);
-			lineRenderer.SetPosition (1, laserDestination.transform.position);
+			LineRendEnable ();
 		}
 		else
 		{
-			lineRenderer.enabled = false;
+			LineRendDisable ();
 			isShot = true;
 		}
 	}
