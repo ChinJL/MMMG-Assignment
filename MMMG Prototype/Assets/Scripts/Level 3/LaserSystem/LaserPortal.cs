@@ -67,6 +67,8 @@ public class LaserPortal : Laser {
 		}
 		else
 		{
+			lineRenderer.SetPosition (0, Vector3.zero);
+			lineRenderer.SetPosition (1, Vector3.zero);
 			fakeSprite.gameObject.SetActive (false);
 		}
 
@@ -87,6 +89,10 @@ public class LaserPortal : Laser {
 				if (hitObject != null)
 				{
 					DisplayLaser (hit.point, hitObject);
+
+					lineRenderer.enabled = true;
+					lineRenderer.SetPosition (0, laserPoint.position);
+					lineRenderer.SetPosition (1, hitObject.transform.position);
 				}
 			}
 		}
@@ -98,7 +104,7 @@ public class LaserPortal : Laser {
 	}
 
 	protected override void LaserEffect2(){
-		LaserReceiver laserReceiver = laserSensor.GetComponent<LaserReceiver> ();
+		LaserReceiver laserReceiver = sensor.GetComponent<LaserReceiver> ();
 		laserReceiver.powerLvl += Time.deltaTime * 2;
 	}
 
@@ -128,13 +134,12 @@ public class LaserPortal : Laser {
 	private void PowerfulEffect(){
 		if (isPowerful)
 		{
-			//junle ur line renderer here
 			ShootLaser ();
 			ShotSound ();
 		}
 		else
 		{
-			//off line renderer here
+			lineRenderer.enabled = false;
 			isShot = true;
 		}
 	}

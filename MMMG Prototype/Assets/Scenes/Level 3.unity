@@ -3963,7 +3963,6 @@ MonoBehaviour:
   - {fileID: 976514722}
   isLightOn: 0
   graffiti_mat: {fileID: 2100000, guid: e2fbcdd9978a6534abaed3f4b778d8aa, type: 2}
-  isLvl1: 0
 --- !u!114 &104113354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5647,7 +5646,6 @@ GameObject:
   m_Component:
   - component: {fileID: 520902344}
   - component: {fileID: 520902347}
-  - component: {fileID: 520902345}
   - component: {fileID: 520902349}
   - component: {fileID: 520902350}
   - component: {fileID: 520902346}
@@ -5672,17 +5670,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &520902345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 520902343}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bea3240a843f8341a03e73a14a46f7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &520902346
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5838,6 +5825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd02e62285fdab949ac5ba66c58982b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
   powerLvl: 0
   laserDirection: {x: 0, y: 0, z: 0}
   portal1a: {fileID: 1274276348}
@@ -10698,10 +10686,8 @@ GameObject:
   m_Component:
   - component: {fileID: 816810425}
   - component: {fileID: 816810423}
-  - component: {fileID: 816810421}
   - component: {fileID: 816810426}
   - component: {fileID: 816810428}
-  - component: {fileID: 816810427}
   - component: {fileID: 816810422}
   m_Layer: 0
   m_Name: Portal_1b
@@ -10710,17 +10696,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &816810421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 816810420}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bea3240a843f8341a03e73a14a46f7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &816810422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10879,17 +10854,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &816810427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 816810420}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68640250fadede44cb8eea74b13bb10a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &816810428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10901,6 +10865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd02e62285fdab949ac5ba66c58982b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
   powerLvl: 0
   laserDirection: {x: 0, y: 0, z: 0}
   portal1a: {fileID: 1274276348}
@@ -14687,8 +14652,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d7cffe3127659418683c96f162a53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 879207456}
   m_laserPoint: {fileID: 1589487297}
   roomLayer: {fileID: 104113350}
+  isPortals: 0
+  isSwitched: 0
+  correctReflector_1: {fileID: 1115402922}
+  correctReflector_2: {fileID: 1626167385}
+  portal_1: {fileID: 1274276347}
+  portal_2: {fileID: 520902343}
 --- !u!23 &879207452
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15090,10 +15062,8 @@ GameObject:
   m_Component:
   - component: {fileID: 963804897}
   - component: {fileID: 963804895}
-  - component: {fileID: 963804893}
   - component: {fileID: 963804898}
   - component: {fileID: 963804900}
-  - component: {fileID: 963804899}
   - component: {fileID: 963804894}
   m_Layer: 0
   m_Name: Portal_2b
@@ -15102,17 +15072,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &963804893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 963804892}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bea3240a843f8341a03e73a14a46f7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &963804894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15271,17 +15230,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &963804899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 963804892}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68640250fadede44cb8eea74b13bb10a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &963804900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15293,6 +15241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd02e62285fdab949ac5ba66c58982b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
   powerLvl: 0
   laserDirection: {x: 0, y: 0, z: 0}
   portal1a: {fileID: 1274276348}
@@ -19809,8 +19758,6 @@ GameObject:
   - component: {fileID: 1115402926}
   - component: {fileID: 1115402925}
   - component: {fileID: 1115402924}
-  - component: {fileID: 1115402923}
-  - component: {fileID: 1115402929}
   - component: {fileID: 1115402928}
   - component: {fileID: 1115402930}
   m_Layer: 0
@@ -19820,17 +19767,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1115402923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1115402922}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f110bb8322a0e40a12be1cc2c5575e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1115402924
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19988,17 +19924,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &1115402929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1115402922}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acad45cab43648145bf7f9ebf22c08b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1115402930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20010,9 +19935,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbdd554db0b85840ad230519cdd1c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 1115402928}
   powerLvl: 0
   m_laserPoint: {fileID: 378746672}
   offset_x: 0.5
+  laserDestination: {fileID: 2014162315}
 --- !u!1 &1132541777
 GameObject:
   m_ObjectHideFlags: 0
@@ -20604,7 +20531,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1274276348}
   - component: {fileID: 1274276351}
-  - component: {fileID: 1274276349}
   - component: {fileID: 1274276353}
   - component: {fileID: 1274276354}
   - component: {fileID: 1274276350}
@@ -20629,17 +20555,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1274276349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1274276347}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bea3240a843f8341a03e73a14a46f7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1274276350
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20795,6 +20710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd02e62285fdab949ac5ba66c58982b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 0}
   powerLvl: 0
   laserDirection: {x: 0, y: 0, z: 0}
   portal1a: {fileID: 1274276348}
@@ -21103,8 +21019,6 @@ GameObject:
   - component: {fileID: 1435694323}
   - component: {fileID: 1435694322}
   - component: {fileID: 1435694321}
-  - component: {fileID: 1435694320}
-  - component: {fileID: 1435694326}
   - component: {fileID: 1435694325}
   - component: {fileID: 1435694327}
   m_Layer: 0
@@ -21114,17 +21028,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1435694320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1435694319}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af83e86ad08d62f4d852b100de06e018, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1435694321
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21281,17 +21184,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &1435694326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1435694319}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2c29f34a82d6748ab9b1a76915870a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1435694327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21303,8 +21195,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d7cffe3127659418683c96f162a53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 1435694325}
   m_laserPoint: {fileID: 810267105}
   roomLayer: {fileID: 104113350}
+  isPortals: 0
+  isSwitched: 0
+  correctReflector_1: {fileID: 1626167385}
+  correctReflector_2: {fileID: 1115402922}
+  portal_1: {fileID: 1274276347}
+  portal_2: {fileID: 520902343}
 --- !u!1 &1439316658
 GameObject:
   m_ObjectHideFlags: 0
@@ -21568,7 +21467,6 @@ GameObject:
   - component: {fileID: 1469555942}
   - component: {fileID: 1469555941}
   - component: {fileID: 1469555940}
-  - component: {fileID: 1469555939}
   m_Layer: 0
   m_Name: Reflector (Without Blockage)
   m_TagString: Reflector
@@ -21576,17 +21474,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1469555939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469555938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f110bb8322a0e40a12be1cc2c5575e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1469555940
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22877,8 +22764,6 @@ GameObject:
   - component: {fileID: 1626167389}
   - component: {fileID: 1626167388}
   - component: {fileID: 1626167387}
-  - component: {fileID: 1626167386}
-  - component: {fileID: 1626167392}
   - component: {fileID: 1626167391}
   - component: {fileID: 1626167393}
   m_Layer: 0
@@ -22888,17 +22773,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1626167386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1626167385}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67f110bb8322a0e40a12be1cc2c5575e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1626167387
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23056,17 +22930,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &1626167392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1626167385}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acad45cab43648145bf7f9ebf22c08b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1626167393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23078,9 +22941,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbdd554db0b85840ad230519cdd1c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 1626167391}
   powerLvl: 0
   m_laserPoint: {fileID: 1910525064}
   offset_x: -0.5
+  laserDestination: {fileID: 1900249572}
 --- !u!1 &1675733555
 GameObject:
   m_ObjectHideFlags: 0
@@ -24434,7 +24299,6 @@ GameObject:
   - component: {fileID: 1900249576}
   - component: {fileID: 1900249575}
   - component: {fileID: 1900249574}
-  - component: {fileID: 1900249573}
   - component: {fileID: 1900249578}
   - component: {fileID: 1900249579}
   m_Layer: 0
@@ -24444,17 +24308,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1900249573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1900249572}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63a5803a0836f14ab2906182e170538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1900249574
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28499,7 +28352,6 @@ GameObject:
   - component: {fileID: 2014162319}
   - component: {fileID: 2014162318}
   - component: {fileID: 2014162317}
-  - component: {fileID: 2014162316}
   - component: {fileID: 2014162321}
   - component: {fileID: 2014162322}
   m_Layer: 0
@@ -28509,17 +28361,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2014162316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2014162315}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d63a5803a0836f14ab2906182e170538, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &2014162317
 MeshRenderer:
   m_ObjectHideFlags: 0

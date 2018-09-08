@@ -27,6 +27,23 @@ public class MovementController : MonoBehaviour {
 	private void Update(){
 		DecideDirection ();
 		CalculateMovement ();
+
+		if (Input.GetKeyDown (KeyCode.A))
+		{
+			MoveLeft ();
+		}
+		if (Input.GetKeyDown (KeyCode.D))
+		{
+			MoveRight ();
+		}
+		if (Input.GetKeyUp (KeyCode.A))
+		{
+			ResetMovement ();
+		}
+		if (Input.GetKeyUp (KeyCode.D))
+		{
+			ResetMovement ();
+		}
 	}
 
 	private void FixedUpdate(){

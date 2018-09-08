@@ -49,11 +49,12 @@ public class SwitchRoom : MonoBehaviour {
 			initialPos3 = room3.localPosition;
 			initialPos4 = room4.localPosition;
 
-//			GameObject[] ReflectorToSensor = GameObject.FindGameObjectsWithTag ("Reflector");
-//			foreach (GameObject RtS in ReflectorToSensor) {
-//				Reflect reflect = RtS.GetComponent<Reflect> ();
-//				reflect.isReflect_ = false;
-//			}
+			GameObject[] laserCannon = GameObject.FindGameObjectsWithTag ("LaserCannon");
+			foreach (GameObject Lasercannon in laserCannon) {
+				LaserCannon LaserCannons = Lasercannon.GetComponent<LaserCannon> ();
+				LaserCannons.isSwitched = !LaserCannons.isSwitched;
+			}
+
 			StartCoroutine(DelaySwitchRoom_1 ());
 		} else {
 			return;
@@ -88,11 +89,13 @@ public class SwitchRoom : MonoBehaviour {
 			initialPos3 = room4.localPosition;
 			initialPos4 = room5.localPosition;
 
-//			GameObject[] goList = GameObject.FindGameObjectsWithTag ("Reflector");
-//			foreach (GameObject go in goList) {
-//				Reflect reflect = go.GetComponent<Reflect> ();
-//				reflect.isReflect_ = false;
-//			}
+
+			GameObject[] laserCannon = GameObject.FindGameObjectsWithTag ("LaserCannon");
+			foreach (GameObject Lasercannon in laserCannon) {
+				LaserCannon LaserCannons = Lasercannon.GetComponent<LaserCannon> ();
+				LaserCannons.isSwitched = !LaserCannons.isSwitched;
+			}
+
 			StartCoroutine(DelaySwitchRoom_2 ());
 		} else {
 			return;

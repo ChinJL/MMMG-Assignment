@@ -12,7 +12,7 @@ public class LightSwitch : MonoBehaviour {
 	public bool isLightOn;
 	[SerializeField] private Material graffiti_mat = null;
 	private Color alpha_zero, alpha_one, alpha_increment, alpha_decrement, white, grey;
-	[SerializeField] private bool isLvl1 = false;
+	//[SerializeField] private bool isLvl1 = false;
 
 	private void Awake(){
 		directionalLight.SetActive (true);
@@ -41,10 +41,10 @@ public class LightSwitch : MonoBehaviour {
 			}
 			StartCoroutine (SwitchOnLight ());
 
-			if (isLvl1)
-			{
+			//if (isLvl1)
+			//{
 				EnableHiddenPathTrigger ();
-			}
+			//}
 		}
 		else
 		{
@@ -55,10 +55,10 @@ public class LightSwitch : MonoBehaviour {
 			}
 			StartCoroutine (SwitchOffLight ());
 
-			if (isLvl1)
-			{
+			//if (isLvl1)
+			//{
 				DisableHiddenPathTrigger ();
-			}
+			//}
 		}
 	}
 

@@ -9,6 +9,15 @@ public class Laser : MonoBehaviour {
 
 	private string s_laserCannon = "LaserCannon", s_laserReflect = "LaserReflect", s_laserSensor = "LaserSensor", s_laserPortal = "LaserPortal";
 
+	public LineRenderer lineRenderer;
+
+	void Start()
+	{
+		lineRenderer = GetComponent<LineRenderer> ();
+		lineRenderer.enabled = false;
+		lineRenderer.useWorldSpace = true;
+	}
+
 	//Vector3 heading, float distance, Vector3 direction,
 	protected virtual void AdjustDirection(){
 		Vector3 heading = laserPoint.position - laserSource.position;
@@ -50,7 +59,7 @@ public class Laser : MonoBehaviour {
 		{
 			if (hitObj.CompareTag (s_laserSensor))
 			{
-				laserSensor = hitObj;
+				sensor = hitObj;
 				LaserEffect2 ();
 			}
 			else if (hitObj.CompareTag (s_laserPortal))
@@ -68,7 +77,7 @@ public class Laser : MonoBehaviour {
 			}
 			else if (hitObj.CompareTag (s_laserSensor))
 			{
-				laserSensor = hitObj;
+				sensor = hitObj;
 				LaserEffect2 ();
 			}
 			else if (hitObj.CompareTag (s_laserPortal))
@@ -84,7 +93,7 @@ public class Laser : MonoBehaviour {
 		//reflector
 	}
 
-	protected GameObject laserSensor;
+	protected GameObject sensor;
 	protected virtual void LaserEffect2(){
 		//sensor
 	}
