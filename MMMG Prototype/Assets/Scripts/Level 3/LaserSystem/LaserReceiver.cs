@@ -55,6 +55,7 @@ public class LaserReceiver : MonoBehaviour {
 
 	private void PowerUp(){
 		meshRend.material.color = lightBlue;
+		//play particle effect
 	}
 
 	private void PowerDown(){

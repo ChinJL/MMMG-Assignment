@@ -20,7 +20,6 @@ public class AudioManager : MonoBehaviour {
 		audioManager = this;
 		sfxSource = audioManager.GetComponent<AudioSource> ();
 		isBGM = true;
-		isSFX = true;
 	}
 
 	private void Start(){
@@ -63,6 +62,10 @@ public class AudioManager : MonoBehaviour {
 			sfxSource.volume = 0;
 			walkingSoundSource.volume = 0;
 		}
+	}
+
+	public void PlayMusic(){
+		audioManager.bgmSource.Play ();
 	}
 
 	public void PlaySfx(Sfx sound){

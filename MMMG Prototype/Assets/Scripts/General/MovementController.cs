@@ -26,15 +26,8 @@ public class MovementController : MonoBehaviour {
 
 	private void Update(){
 		DecideDirection ();
-		MovementByKeys ();
-	}
-
-	private void FixedUpdate(){
 		CalculateMovement ();
-		MoveRb ();
-	}
 
-	private void MovementByKeys(){
 		if (Input.GetKeyDown (KeyCode.A))
 		{
 			MoveLeft ();
@@ -51,6 +44,10 @@ public class MovementController : MonoBehaviour {
 		{
 			ResetMovement ();
 		}
+	}
+
+	private void FixedUpdate(){
+		MoveRb ();
 	}
 
 	public void MoveLeft(){

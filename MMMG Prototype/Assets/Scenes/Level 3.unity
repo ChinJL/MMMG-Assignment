@@ -16678,7 +16678,7 @@ GameObject:
   - component: {fileID: 1090593669}
   - component: {fileID: 1090593668}
   m_Layer: 0
-  m_Name: WalkingSoundObj
+  m_Name: WalkingSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16739,7 +16739,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -16763,7 +16763,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 0
+    m_RotationOrder: 4
 --- !u!4 &1090593669
 Transform:
   m_ObjectHideFlags: 0
@@ -21088,7 +21088,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 67f784f5515cfb04b9a0617fe3fd706a, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

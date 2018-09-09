@@ -13,6 +13,8 @@ public class LaserReflect : Laser {
 	private Vector3 reflectOffset;
 	[SerializeField] private float offset_x = 0.5f;
 
+	public GameObject laserDestination;
+
 	private void OnEnable(){
 		laserPoint = m_laserPoint;
 		laserSource = gameObject.transform;
@@ -72,7 +74,7 @@ public class LaserReflect : Laser {
 	}
 
 	protected override void LaserEffect2(){
-		LaserReceiver laserReceiver = sensor.GetComponent<LaserReceiver> ();
+		LaserReceiver laserReceiver = laserDestination.GetComponent<LaserReceiver> ();
 		laserReceiver.powerLvl += Time.deltaTime * 2;
 	}
 
