@@ -2120,7 +2120,127 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
+<<<<<<< HEAD
   - {fileID: 2100000, guid: f7ed3e3e6dbe5b34ab18e1abdc87e755, type: 2}
+=======
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: a1bc1efcc59fbcd43a806d9ab593b232, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.43, y: 2.8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!1 &735009936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1732272640957312, guid: 692e7a83a56ebdf499f0820f72199149,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 735009944}
+  - component: {fileID: 735009943}
+  - component: {fileID: 735009942}
+  - component: {fileID: 735009939}
+  - component: {fileID: 735009945}
+  - component: {fileID: 735009941}
+  - component: {fileID: 735009937}
+  m_Layer: 2
+  m_Name: Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &735009937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114113338221883664, guid: 692e7a83a56ebdf499f0820f72199149,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735009936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08576947f8555c44f9d575479126ddf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_spriteRend: {fileID: 1943635963}
+  speed: 7.5
+  anim: {fileID: 1943635961}
+  facingLeft: 0
+  portalGun_left: {fileID: 280854922}
+  portalGun_right: {fileID: 990121317}
+--- !u!54 &735009939
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 54497046073587252, guid: 692e7a83a56ebdf499f0820f72199149,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735009936}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &735009941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114833587521664346, guid: 692e7a83a56ebdf499f0820f72199149,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735009936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da7c990c9aba3740a62b7f825ee41e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityControl: 0
+  lightSwitch: {fileID: 104113353}
+  anim: {fileID: 1943635961}
+--- !u!23 &735009942
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 23773219865165368, guid: 692e7a83a56ebdf499f0820f72199149,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735009936}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+>>>>>>> parent of b206206... - Some modification
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2806,10 +2926,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ceceb7168638e4f8894c0642c388a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   hiddenPathAnimator: {fileID: 238985098}
   mesh: {fileID: 679345649}
   isShowing: 1
 --- !u!23 &679345649
+=======
+  m_laserPoint: {fileID: 1589487297}
+  roomLayer: {fileID: 104113350}
+--- !u!23 &879207452
+>>>>>>> parent of b206206... - Some modification
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -5079,6 +5205,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 73e555f0d2a335d46ac87d9b0af8892a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5091,6 +5218,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
 --- !u!1 &1014553057
+=======
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    serializedVersion: 2
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.085105896
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+--- !u!114 &1115402930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1115402922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cbdd554db0b85840ad230519cdd1c4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerLvl: 0
+  m_laserPoint: {fileID: 378746672}
+  offset_x: 0.5
+--- !u!1 &1132541777
+>>>>>>> parent of b206206... - Some modification
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -5805,6 +6004,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 135243693936497282, guid: 692e7a83a56ebdf499f0820f72199149,
     type: 2}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1113078070}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -5814,6 +6014,85 @@ SphereCollider:
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1113078074
 MeshFilter:
+=======
+  m_GameObject: {fileID: 1230363071}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!4 &1230363073
+Transform:
+>>>>>>> parent of b206206... - Some modification
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 33460889123285736, guid: 692e7a83a56ebdf499f0820f72199149,
     type: 2}
@@ -6283,8 +6562,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e12dfe5a493704faf7928b67aba770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   loadingImage: {fileID: 292776323}
 --- !u!1 &1178549892
+=======
+  m_laserPoint: {fileID: 810267105}
+  roomLayer: {fileID: 104113350}
+--- !u!1 &1446420754
+>>>>>>> parent of b206206... - Some modification
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -8108,6 +8393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd906e560f68bed4598b4985f8bf30fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   audios:
   - {fileID: 8300000, guid: 238e82c981cbfcd47a3023742e423c77, type: 3}
   - {fileID: 8300000, guid: 313dcc98b3246ff4491ad472a03471b7, type: 3}
@@ -8214,6 +8500,12 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 0
 --- !u!1 &1542250134
+=======
+  powerLvl: 0
+  m_laserPoint: {fileID: 1910525064}
+  offset_x: -0.5
+--- !u!1 &1675733555
+>>>>>>> parent of b206206... - Some modification
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
