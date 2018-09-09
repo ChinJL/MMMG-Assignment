@@ -12,7 +12,6 @@ public class PortalGun : MonoBehaviour {
 	private float distance;
 	private Vector3 direction;
 	private bool isAim;
-	private Transform surface;
 	[SerializeField] private GameObject[] portalObj = null;
 	private int turn = 0;
 	[SerializeField] private float bulletSpeed = 10f;
@@ -146,8 +145,6 @@ public class PortalGun : MonoBehaviour {
 
 		if (Input.GetKeyDown (resetKey) && isReached) {
 			ResetPortal ();
-//			portal_1.lineRenderer.enabled = false;
-//			portal_2.lineRenderer.enabled = false;
 		}
 	}
 
@@ -157,20 +154,6 @@ public class PortalGun : MonoBehaviour {
 		}
 		isReached = true;
 		turn = 0;
-//		AudioManager.audioManager.PlaySfx (AudioManager.Sfx.onLight); ***
-//		GameObject[] laserGun = GameObject.FindGameObjectsWithTag ("LaserGun");
-//		foreach (GameObject gun in laserGun)
-//		{
-//			LaserGunToReflector portal = gun.GetComponent<LaserGunToReflector> ();
-//			portal.hit_Portal_1 = false;
-//			portal.hit_Portal_2 = false;
-//		}
-//		GameObject[] reflector = GameObject.FindGameObjectsWithTag ("Reflector");
-//		foreach (GameObject reflect in reflector) {
-//			LaserReflectorToSensor portalHit = reflect.GetComponent<LaserReflectorToSensor> ();
-//			portalHit.hittedPortal_1 = false;
-//			portalHit.hittedPortal_2 = false;
-//		}
 	}
 
 	private IEnumerator PlacePortal(GameObject bullet, Vector3 targetLocation){
