@@ -30,6 +30,13 @@ public class PortalGun : MonoBehaviour {
 	[SerializeField] private Transform portalGun1 = null, portalGun2 = null;
 	PortalGun anotherPortalGun;
 
+	private void Start()
+	{
+		lineRend = GetComponent<LineRenderer> ();
+		lineRend.enabled = false;
+		lineRend.useWorldSpace = true;
+	}
+
 	private void Awake(){
 		if (transform == portalGun1)
 		{
