@@ -11,7 +11,7 @@ public class Laser : MonoBehaviour {
 
 	[SerializeField] protected LineRenderer lineRenderer;
 
-	protected void Awake()
+	private void Awake()
 	{
 		LineRendSetUp ();
 	}
